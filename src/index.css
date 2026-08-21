@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+/* ========================================
+   HILL CITY MEDIA — DESIGN TOKENS
+======================================== */
+
+:root {
+  /* Brand Colors */
+  --hill-red: #e50914;
+  --hill-yellow: #ffd400;
+  --hill-white: #ffffff;
+  --hill-black: #080808;
+  --hill-dark: #111111;
+
+  /* Fonts */
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+}
+
+/* ========================================
+   GLOBAL RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--hill-white);
+  color: var(--hill-black);
+  font-family: var(--font-montserrat);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+.font-oswald {
+  font-family: var(--font-oswald);
+}
+
+/* ========================================
+   ELEMENTS
+======================================== */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========================================
+   SELECTION
+======================================== */
+
+::selection {
+  background: var(--hill-red);
+  color: var(--hill-white);
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--hill-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--hill-black);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hill-red);
+}
