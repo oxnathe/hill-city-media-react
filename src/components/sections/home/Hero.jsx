@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import SceneCanvas from "../three/SceneCanvas";
+import SceneCanvas from "../../three/SceneCanvas";
 
 export default function Hero() {
   return (

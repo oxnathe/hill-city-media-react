@@ -1,10 +1,11 @@
-import Hero from "../components/sections/Hero";
-import Services from "../components/sections/Services";
-import Portfolio from "../components/sections/Portfolio";
-import AboutPreview from "../components/sections/AboutPreview";
-import Process from "../components/sections/Process";
-import Testimonials from "../components/sections/Testimonials";
-import Brands from "../components/sections/Brands";
+import Hero from "../components/sections/home/Hero";
+import Services from "../components/sections/home/Services";
+import Portfolio from "../components/sections/home/Portfolio";
+import AboutPreview from "../components/sections/home/AboutPreview";
+import Process from "../components/sections/home/Process";
+import Testimonials from "../components/sections/home/Testimonials";
+import Brands from "../components/sections/home/Brands";
+import CTA from "../components/sections/home/CTA";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Process />
       <Testimonials />
       <Brands />
+      <CTA />
     </main>
   );
 }
