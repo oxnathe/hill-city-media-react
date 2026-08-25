@@ -1,7 +1,7 @@
 import PrintingHero from "../components/sections/printing/PrintingHero";
 import PrintingServicesOverview from "../components/sections/printing/PrintingServicesOverview";
-import PrintingWhyChoose from "../components/sections/printing/PrintingWhyChoose";
-import CTA from "../components/sections/home/CTA";
+import PrintingCatalogue from "../components/sections/printing/PrintingCatalogue";
+
 
 export default function PrintingServices() {
   return (
@@ -10,9 +10,10 @@ export default function PrintingServices() {
 
       <PrintingServicesOverview />
 
-      <PrintingWhyChoose />
+      <PrintingCatalogue />
 
-      <CTA />
+  
+
     </main>
   );
 }

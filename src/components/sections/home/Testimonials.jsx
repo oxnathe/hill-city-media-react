@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+
 import { ArrowUpRight, Quote } from "lucide-react";
 
 const testimonials = [
@@ -31,6 +32,7 @@ export default function Testimonials() {
       {/* =====================================================
           TOP BRAND LINE
       ===================================================== */}
+
       <motion.div
         initial={{ scaleX: 0, originX: 0 }}
         whileInView={{ scaleX: 1 }}
@@ -42,12 +44,14 @@ export default function Testimonials() {
       {/* =====================================================
           BACKGROUND ACCENT
       ===================================================== */}
+
       <div className="pointer-events-none absolute -right-40 top-10 h-96 w-96 rounded-full bg-[var(--hill-yellow)]/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* =====================================================
             SECTION HEADING
         ===================================================== */}
+
         <div className="mb-16 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-end">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -64,9 +68,11 @@ export default function Testimonials() {
             </div>
 
             <h2 className="max-w-3xl font-oswald text-5xl font-semibold uppercase leading-[0.9] tracking-tight md:text-7xl lg:text-8xl">
-              The people
+              What our
               <br />
-              <span className="text-[var(--hill-red)]">behind the brands.</span>
+              <span className="text-[var(--hill-red)]">
+                clients say.
+              </span>
             </h2>
           </motion.div>
 
@@ -86,6 +92,7 @@ export default function Testimonials() {
         {/* =====================================================
             TESTIMONIAL GRID
         ===================================================== */}
+
         <div className="grid gap-5 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.article
@@ -101,11 +108,13 @@ export default function Testimonials() {
               className="group relative flex min-h-[400px] flex-col justify-between overflow-hidden border border-black/10 bg-[#f8f8f8] p-7 transition-all duration-300 hover:border-black/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] md:p-8"
             >
               {/* Number */}
+
               <span className="absolute right-6 top-3 font-oswald text-7xl font-semibold text-black/[0.04] transition-colors duration-300 group-hover:text-[var(--hill-yellow)]/30">
                 0{index + 1}
               </span>
 
               {/* Quote */}
+
               <div>
                 <div className="mb-9 flex h-12 w-12 items-center justify-center bg-[var(--hill-red)] text-white transition-transform duration-300 group-hover:rotate-3">
                   <Quote size={21} strokeWidth={2.5} />
@@ -117,6 +126,7 @@ export default function Testimonials() {
               </div>
 
               {/* Client */}
+
               <div className="mt-10">
                 <div className="mb-5 h-[2px] w-full bg-black/10 transition-colors duration-300 group-hover:bg-[var(--hill-yellow)]" />
 
@@ -143,6 +153,7 @@ export default function Testimonials() {
         {/* =====================================================
             CTA
         ===================================================== */}
+
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -160,6 +171,7 @@ export default function Testimonials() {
               START A PROJECT
               SAME VISUAL LANGUAGE AS NAVBAR
           ================================================= */}
+
           <a
             href="https://wa.me/2348031388328"
             target="_blank"
@@ -167,8 +179,9 @@ export default function Testimonials() {
             className="group relative flex overflow-hidden rounded-full bg-[#080808] px-6 py-3.5 font-montserrat text-xs font-bold text-white"
           >
             {/* Moving red/yellow background */}
+
             <motion.span
-              className="absolute inset-0 bg-[linear-gradient(110deg,#e50914_0%,#e50914_35%,#ffd400_50%,#e50914_65%,#e50914_100%)] bg-[length:250%_100%]"
+              className="absolute inset-0 z-0 bg-[linear-gradient(110deg,#e50914_0%,#e50914_35%,#ffd400_50%,#e50914_65%,#e50914_100%)] bg-[length:250%_100%]"
               animate={{
                 backgroundPosition: ["100% 0%", "0% 0%"],
               }}
@@ -180,20 +193,23 @@ export default function Testimonials() {
             />
 
             {/* Dark idle overlay */}
-            <span className="absolute inset-[2px] rounded-full bg-[#080808]/85 transition-all duration-500 group-hover:bg-transparent" />
+
+            <span className="absolute inset-[2px] z-[1] rounded-full bg-[#080808]/85 transition-all duration-500 group-hover:bg-transparent" />
 
             {/* Hover glow */}
-            <span className="absolute inset-0 rounded-full opacity-0 shadow-[0_0_25px_rgba(229,9,20,0.45)] transition-opacity duration-300 group-hover:opacity-100" />
 
-            {/* Content */}
-            <span className="relative z-10 flex items-center gap-2">
-              <span className="transition-colors duration-300 group-hover:text-black">
+            <span className="absolute inset-0 z-[2] rounded-full opacity-0 shadow-[0_0_25px_rgba(229,9,20,0.45)] transition-opacity duration-300 group-hover:opacity-100" />
+
+            {/* Button content */}
+
+            <span className="relative z-[20] flex items-center gap-2 text-white">
+              <span className="text-white transition-colors duration-300 group-hover:text-black">
                 Start a Project
               </span>
 
               <ArrowUpRight
                 size={15}
-                className="transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black"
+                className="text-white transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black"
               />
             </span>
           </a>

@@ -6,9 +6,14 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
+
 import PrintingServices from "./pages/PrintingServices";
 import DigitalMarketing from "./pages/DigitalMarketing";
 import Videography from "./pages/Videography";
+import CorporateIdentity from "./pages/CorporateIdentity";
+
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -16,10 +21,13 @@ export default function App() {
       <Navbar />
 
       <Routes>
+        {/* Home */}
         <Route path="/" element={<Home />} />
 
+        {/* About */}
         <Route path="/about" element={<About />} />
 
+        {/* Services */}
         <Route path="/services" element={<Services />} />
 
         <Route
@@ -35,6 +43,23 @@ export default function App() {
         <Route
           path="/services/videography"
           element={<Videography />}
+        />
+
+        <Route
+          path="/services/corporate-identity"
+          element={<CorporateIdentity />}
+        />
+
+        {/* Portfolio */}
+        <Route
+          path="/portfolio"
+          element={<Portfolio />}
+        />
+
+        {/* Contact */}
+        <Route
+          path="/contact"
+          element={<Contact />}
         />
       </Routes>
 

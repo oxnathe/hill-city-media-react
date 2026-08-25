@@ -39,6 +39,18 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] =
     useState(false);
 
+  /* =====================================================
+     SCROLL TO TOP
+     ===================================================== */
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   const servicesPageActive =
     location.pathname === "/services" ||
     location.pathname.startsWith("/services/");
@@ -63,7 +75,10 @@ export default function Navbar() {
 
           <Link
             to="/"
-            onClick={closeMobile}
+            onClick={() => {
+              closeMobile();
+              scrollToTop();
+            }}
             className="group relative z-10 flex items-center"
           >
             <img
@@ -81,11 +96,14 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-1 lg:flex">
 
-            {/* HOME */}
+            {/* =================================================
+                HOME
+            ================================================= */}
 
             <NavLink
               to="/"
               end
+              onClick={scrollToTop}
               className="group relative rounded-full px-4 py-3 font-montserrat text-sm font-semibold"
             >
               {({ isActive }) => (
@@ -111,10 +129,13 @@ export default function Navbar() {
               )}
             </NavLink>
 
-            {/* ABOUT */}
+            {/* =================================================
+                ABOUT
+            ================================================= */}
 
             <NavLink
               to="/about"
+              onClick={scrollToTop}
               className="group relative rounded-full px-4 py-3 font-montserrat text-sm font-semibold"
             >
               {({ isActive }) => (
@@ -151,6 +172,7 @@ export default function Navbar() {
             >
               <NavLink
                 to="/services"
+                onClick={scrollToTop}
                 className="group relative flex items-center gap-1 rounded-full px-4 py-3 font-montserrat text-sm font-semibold"
               >
                 {({ isActive }) => {
@@ -232,9 +254,10 @@ export default function Navbar() {
                       <NavLink
                         key={service.path}
                         to={service.path}
-                        onClick={() =>
-                          setServicesOpen(false)
-                        }
+                        onClick={() => {
+                          setServicesOpen(false);
+                          scrollToTop();
+                        }}
                         className="group flex items-center gap-3 rounded-xl px-3 py-3 transition-all duration-300 hover:bg-black/[0.03]"
                       >
                         {({ isActive }) => (
@@ -276,10 +299,13 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* PORTFOLIO */}
+            {/* =================================================
+                PORTFOLIO
+            ================================================= */}
 
             <NavLink
               to="/portfolio"
+              onClick={scrollToTop}
               className="group relative rounded-full px-4 py-3 font-montserrat text-sm font-semibold"
             >
               {({ isActive }) => (
@@ -305,10 +331,13 @@ export default function Navbar() {
               )}
             </NavLink>
 
-            {/* CONTACT */}
+            {/* =================================================
+                CONTACT
+            ================================================= */}
 
             <NavLink
               to="/contact"
+              onClick={scrollToTop}
               className="group relative rounded-full px-4 py-3 font-montserrat text-sm font-semibold"
             >
               {({ isActive }) => (
@@ -342,10 +371,10 @@ export default function Navbar() {
 
           <Link
             to="/contact"
+            onClick={scrollToTop}
             className="group relative hidden overflow-hidden rounded-full bg-[#080808] px-6 py-3.5 font-montserrat text-xs font-bold text-white lg:flex"
           >
             {/* Moving red/yellow background */}
-
             <motion.span
               className="absolute inset-0 bg-[linear-gradient(110deg,#e50914_0%,#e50914_35%,#ffd400_50%,#e50914_65%,#e50914_100%)] bg-[length:250%_100%]"
               animate={{
@@ -362,23 +391,21 @@ export default function Navbar() {
             />
 
             {/* Dark idle overlay */}
-
             <span className="absolute inset-[2px] rounded-full bg-[#080808]/85 transition-all duration-500 group-hover:bg-transparent" />
 
             {/* Hover glow */}
-
             <span className="absolute inset-0 rounded-full opacity-0 shadow-[0_0_25px_rgba(229,9,20,0.45)] transition-opacity duration-300 group-hover:opacity-100" />
 
             {/* Button content */}
-
-            <span className="relative z-10 flex items-center gap-2">
-              <span className="transition-colors duration-300 group-hover:text-black">
+            {/* KEEP TEXT WHITE */}
+            <span className="relative z-10 flex items-center gap-2 text-white">
+              <span className="text-white transition-colors duration-300">
                 Start a Project
               </span>
 
               <ArrowUpRight
                 size={15}
-                className="transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black"
+                className="text-white transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
               />
             </span>
           </Link>
@@ -430,12 +457,13 @@ export default function Navbar() {
             className="fixed inset-0 z-[90] bg-[#080808] lg:hidden"
           >
             {/* Red glow */}
-
             <div className="pointer-events-none absolute -right-32 top-20 h-80 w-80 rounded-full bg-[var(--hill-red)] opacity-20 blur-[100px]" />
 
             <div className="flex h-full flex-col overflow-y-auto px-6 pb-10 pt-32">
 
-              {/* MOBILE NAVIGATION */}
+              {/* =================================================
+                  MOBILE NAVIGATION
+              ================================================= */}
 
               <div className="flex flex-col">
 
@@ -444,7 +472,10 @@ export default function Navbar() {
                 <NavLink
                   to="/"
                   end
-                  onClick={closeMobile}
+                  onClick={() => {
+                    closeMobile();
+                    scrollToTop();
+                  }}
                   className="group flex items-center justify-between border-b border-white/10 py-5"
                 >
                   {({ isActive }) => (
@@ -475,7 +506,10 @@ export default function Navbar() {
 
                 <NavLink
                   to="/about"
-                  onClick={closeMobile}
+                  onClick={() => {
+                    closeMobile();
+                    scrollToTop();
+                  }}
                   className="group flex items-center justify-between border-b border-white/10 py-5"
                 >
                   {({ isActive }) => (
@@ -502,7 +536,9 @@ export default function Navbar() {
                   )}
                 </NavLink>
 
-                {/* SERVICES */}
+                {/* =================================================
+                    MOBILE SERVICES
+                ================================================= */}
 
                 <div className="border-b border-white/10">
                   <button
@@ -536,7 +572,7 @@ export default function Navbar() {
                     />
                   </button>
 
-                  {/* MOBILE SERVICES */}
+                  {/* MOBILE SERVICES LIST */}
 
                   <AnimatePresence>
                     {mobileServicesOpen && (
@@ -560,7 +596,10 @@ export default function Navbar() {
                             <NavLink
                               key={service.path}
                               to={service.path}
-                              onClick={closeMobile}
+                              onClick={() => {
+                                closeMobile();
+                                scrollToTop();
+                              }}
                               className="group flex items-center gap-4 py-3"
                             >
                               {({ isActive }) => (
@@ -598,7 +637,10 @@ export default function Navbar() {
 
                 <NavLink
                   to="/portfolio"
-                  onClick={closeMobile}
+                  onClick={() => {
+                    closeMobile();
+                    scrollToTop();
+                  }}
                   className="group flex items-center justify-between border-b border-white/10 py-5"
                 >
                   {({ isActive }) => (
@@ -629,7 +671,10 @@ export default function Navbar() {
 
                 <NavLink
                   to="/contact"
-                  onClick={closeMobile}
+                  onClick={() => {
+                    closeMobile();
+                    scrollToTop();
+                  }}
                   className="group flex items-center justify-between border-b border-white/10 py-5"
                 >
                   {({ isActive }) => (
@@ -707,7 +752,9 @@ export default function Navbar() {
                 />
               </motion.a>
 
-              {/* MOBILE FOOTER */}
+              {/* =================================================
+                  MOBILE FOOTER
+              ================================================= */}
 
               <p className="mt-auto pt-10 font-poppins text-xs text-white/30">
                 Creative. Print. Digital. Media.
