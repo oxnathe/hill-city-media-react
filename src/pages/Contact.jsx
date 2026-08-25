@@ -1,4 +1,7 @@
+import SEO from "../components/seo/SEO";
+
 import { motion } from "motion/react";
+
 import { ArrowUpRight } from "lucide-react";
 
 export default function Contact() {
@@ -10,6 +13,12 @@ export default function Contact() {
 
   return (
     <main className="bg-white">
+      <SEO
+        title="Contact Hill City Media — Start Your Project"
+        description="Ready to elevate your brand? Contact Hill City Media to discuss printing, digital marketing, videography, corporate identity and creative media projects."
+        path="/contact"
+      />
+
       <section className="relative flex min-h-[75vh] items-center overflow-hidden px-6 py-24 sm:px-8 lg:px-12">
         {/* Decorative glows */}
         <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#e50914]/10 blur-[100px]" />
@@ -40,6 +49,7 @@ export default function Contact() {
             {/* Heading */}
             <h1 className="mx-auto max-w-4xl font-['Montserrat'] text-5xl font-black leading-[0.95] tracking-[-0.045em] text-[#080808] sm:text-6xl lg:text-8xl">
               Let&apos;s create
+
               <span className="block text-[#e50914]">
                 something great.
               </span>
@@ -51,11 +61,7 @@ export default function Contact() {
               bring your idea to life.
             </p>
 
-            {/* =================================================
-                WHATSAPP CTA
-                SAME DESIGN AS MOBILE NAVBAR CTA
-            ================================================= */}
-
+            {/* WhatsApp CTA */}
             <motion.a
               href={whatsappLink}
               target="_blank"
@@ -65,7 +71,6 @@ export default function Contact() {
               className="group relative mt-10 inline-flex items-center gap-4 overflow-hidden rounded-full bg-[#080808] px-8 py-4 font-['Poppins'] text-sm font-bold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-red-950/30 sm:text-base"
             >
               {/* Moving red/yellow background */}
-
               <motion.span
                 className="absolute inset-0 bg-[linear-gradient(110deg,#e50914_0%,#e50914_35%,#ffd400_50%,#e50914_65%,#e50914_100%)] bg-[length:250%_100%]"
                 animate={{
@@ -82,15 +87,12 @@ export default function Contact() {
               />
 
               {/* Dark idle overlay */}
-
               <span className="absolute inset-[2px] rounded-full bg-[#080808]/85 transition-all duration-500 group-hover:bg-transparent" />
 
               {/* Hover glow */}
-
               <span className="absolute inset-0 rounded-full opacity-0 shadow-[0_0_30px_rgba(229,9,20,0.45)] transition-opacity duration-300 group-hover:opacity-100" />
 
               {/* WhatsApp Logo */}
-
               <span className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
                 <svg
                   viewBox="0 0 32 32"
@@ -104,13 +106,11 @@ export default function Contact() {
               </span>
 
               {/* Visible Text */}
-
               <span className="relative z-10 text-white transition-colors duration-300 group-hover:text-black">
                 Start a Conversation
               </span>
 
               {/* Arrow */}
-
               <ArrowUpRight
                 size={18}
                 strokeWidth={2}
@@ -120,7 +120,6 @@ export default function Contact() {
           </motion.div>
 
           {/* Services */}
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

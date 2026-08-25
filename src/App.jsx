@@ -1,67 +1,113 @@
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+
+import StructuredData from "./components/seo/StructuredData";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
+// Lazy-loaded pages
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
 
-import PrintingServices from "./pages/PrintingServices";
-import DigitalMarketing from "./pages/DigitalMarketing";
-import Videography from "./pages/Videography";
-import CorporateIdentity from "./pages/CorporateIdentity";
+const PrintingServices = lazy(
+  () => import("./pages/PrintingServices")
+);
 
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
+const DigitalMarketing = lazy(
+  () => import("./pages/DigitalMarketing")
+);
+
+const Videography = lazy(
+  () => import("./pages/Videography")
+);
+
+const CorporateIdentity = lazy(
+  () => import("./pages/CorporateIdentity")
+);
+
+const Portfolio = lazy(
+  () => import("./pages/Portfolio")
+);
+
+const Contact = lazy(
+  () => import("./pages/Contact")
+);
+
+function PageLoader() {
+  return (
+    <div className="flex min-h-[60vh] items-center justify-center bg-white">
+      <div className="flex items-center gap-3">
+        <span className="h-2 w-2 animate-pulse rounded-full bg-[#e50914]" />
+        <span className="h-2 w-2 animate-pulse rounded-full bg-[#ffd400] [animation-delay:150ms]" />
+        <span className="h-2 w-2 animate-pulse rounded-full bg-[#080808] [animation-delay:300ms]" />
+      </div>
+    </div>
+  );
+}
 
 export default function App() {
   return (
     <>
+      <StructuredData />
+
       <Navbar />
 
-      <Routes>
-        {/* Home */}
-        <Route path="/" element={<Home />} />
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          {/* Home */}
+          <Route
+            path="/"
+            element={<Home />}
+          />
 
-        {/* About */}
-        <Route path="/about" element={<About />} />
+          {/* About */}
+          <Route
+            path="/about"
+            element={<About />}
+          />
 
-        {/* Services */}
-        <Route path="/services" element={<Services />} />
+          {/* Services */}
+          <Route
+            path="/services"
+            element={<Services />}
+          />
 
-        <Route
-          path="/services/printing"
-          element={<PrintingServices />}
-        />
+          {/* Service Pages */}
+          <Route
+            path="/services/printing"
+            element={<PrintingServices />}
+          />
 
-        <Route
-          path="/services/digital-marketing"
-          element={<DigitalMarketing />}
-        />
+          <Route
+            path="/services/digital-marketing"
+            element={<DigitalMarketing />}
+          />
 
-        <Route
-          path="/services/videography"
-          element={<Videography />}
-        />
+          <Route
+            path="/services/videography"
+            element={<Videography />}
+          />
 
-        <Route
-          path="/services/corporate-identity"
-          element={<CorporateIdentity />}
-        />
+          <Route
+            path="/services/corporate-identity"
+            element={<CorporateIdentity />}
+          />
 
-        {/* Portfolio */}
-        <Route
-          path="/portfolio"
-          element={<Portfolio />}
-        />
+          {/* Portfolio */}
+          <Route
+            path="/portfolio"
+            element={<Portfolio />}
+          />
 
-        {/* Contact */}
-        <Route
-          path="/contact"
-          element={<Contact />}
-        />
-      </Routes>
+          {/* Contact */}
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+        </Routes>
+      </Suspense>
 
       <Footer />
     </>

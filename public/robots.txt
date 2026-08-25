@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hill-city-media.vercel.app/sitemap.xml

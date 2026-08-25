@@ -1,5 +1,7 @@
+import { lazy, Suspense } from "react";
 import { motion } from "motion/react";
-import SceneCanvas from "../../three/SceneCanvas";
+
+const SceneCanvas = lazy(() => import("../../three/SceneCanvas"));
 
 export default function Hero() {
   return (
@@ -15,11 +17,8 @@ export default function Hero() {
       {/* =========================================
           BACKGROUND LIGHT
       ========================================== */}
-
       <div className="pointer-events-none absolute inset-0 z-0">
-
         {/* Soft white center glow */}
-
         <div
           className="
             absolute
@@ -36,7 +35,6 @@ export default function Hero() {
         />
 
         {/* Red glow */}
-
         <div
           className="
             absolute
@@ -52,7 +50,6 @@ export default function Hero() {
         />
 
         {/* Yellow glow */}
-
         <div
           className="
             absolute
@@ -68,7 +65,6 @@ export default function Hero() {
         />
 
         {/* Subtle white top-left glow */}
-
         <div
           className="
             absolute
@@ -81,23 +77,21 @@ export default function Hero() {
             blur-[120px]
           "
         />
-
       </div>
-
 
       {/* =========================================
           3D SCENE
+          Desktop only + lazy loaded
       ========================================== */}
-
-      <div className="pointer-events-none absolute inset-0 z-[1]">
-        <SceneCanvas />
+      <div className="pointer-events-none absolute inset-0 z-[1] hidden lg:block">
+        <Suspense fallback={null}>
+          <SceneCanvas />
+        </Suspense>
       </div>
-
 
       {/* =========================================
           DARK / LIGHT GRADIENT
       ========================================== */}
-
       <div
         className="
           pointer-events-none
@@ -111,11 +105,9 @@ export default function Hero() {
         "
       />
 
-
       {/* =========================================
           HERO CONTENT
       ========================================== */}
-
       <div
         className="
           relative
@@ -128,24 +120,18 @@ export default function Hero() {
           px-5
           pb-16
           pt-28
-
           sm:px-6
           sm:pt-28
-
           md:px-8
           md:pt-28
           md:pb-20
-
           lg:px-10
         "
       >
-
         <div className="max-w-3xl">
-
           {/* =====================================
               EYEBROW
           ====================================== */}
-
           <motion.div
             initial={{
               opacity: 0,
@@ -161,7 +147,6 @@ export default function Hero() {
             }}
             className="mb-6 flex items-center gap-3"
           >
-
             <span className="h-[2px] w-10 bg-[var(--hill-red)]" />
 
             <span
@@ -176,14 +161,11 @@ export default function Hero() {
             >
               Hill City Media
             </span>
-
           </motion.div>
-
 
           {/* =====================================
               MAIN HEADING
           ====================================== */}
-
           <motion.h1
             initial={{
               opacity: 0,
@@ -206,27 +188,20 @@ export default function Hero() {
               leading-[0.86]
               tracking-tight
               text-white
-
               sm:text-7xl
-
               md:text-8xl
-
               lg:text-[110px]
             "
           >
-
             We elevate
-
             <br />
 
             <span className="relative inline-block text-[var(--hill-red)]">
-
               Brands.
 
               {/* =================================
                   ANIMATED YELLOW UNDERLINE
               ================================== */}
-
               <motion.span
                 initial={{
                   scaleX: 0,
@@ -248,20 +223,15 @@ export default function Hero() {
                   w-full
                   origin-left
                   bg-[var(--hill-yellow)]
-
                   md:-bottom-3
                 "
               />
-
             </span>
-
           </motion.h1>
-
 
           {/* =====================================
               DESCRIPTION
           ====================================== */}
-
           <motion.p
             initial={{
               opacity: 0,
@@ -282,7 +252,6 @@ export default function Hero() {
               text-base
               leading-7
               text-white
-
               md:text-lg
             "
           >
@@ -290,11 +259,9 @@ export default function Hero() {
             printing, branding, media production and digital solutions.
           </motion.p>
 
-
           {/* =====================================
               CTA BUTTONS
           ====================================== */}
-
           <motion.div
             initial={{
               opacity: 0,
@@ -315,15 +282,14 @@ export default function Hero() {
               gap-4
             "
           >
-
             {/* =================================
                 START A PROJECT
             ================================== */}
-
             <a
               href="https://wa.me/2348031388328"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Start a project with Hill City Media on WhatsApp"
               className="
                 group
                 relative
@@ -339,11 +305,12 @@ export default function Hero() {
                 tracking-wider
                 text-white
                 shadow-[0_10px_40px_rgba(229,9,20,0.2)]
+                transition-all
+                duration-300
+                hover:shadow-[0_14px_50px_rgba(229,9,20,0.35)]
               "
             >
-
               {/* Yellow hover layer */}
-
               <span
                 className="
                   absolute
@@ -357,7 +324,6 @@ export default function Hero() {
               />
 
               {/* Button text */}
-
               <span
                 className="
                   relative
@@ -369,14 +335,11 @@ export default function Hero() {
               >
                 Start a Project
               </span>
-
             </a>
-
 
             {/* =================================
                 EXPLORE OUR SERVICES
             ================================== */}
-
             <a
               href="#services"
               className="
@@ -393,11 +356,12 @@ export default function Hero() {
                 uppercase
                 tracking-wider
                 text-black
+                transition-all
+                duration-300
+                hover:-translate-y-1
               "
             >
-
               {/* White surface */}
-
               <span
                 className="
                   absolute
@@ -407,7 +371,6 @@ export default function Hero() {
               />
 
               {/* Button text */}
-
               <span
                 className="
                   relative
@@ -420,16 +383,12 @@ export default function Hero() {
               >
                 Explore Our Services
               </span>
-
             </a>
-
           </motion.div>
-
 
           {/* =====================================
               PRINT → BRAND → DIGITAL
           ====================================== */}
-
           <motion.div
             initial={{
               opacity: 0,
@@ -450,9 +409,7 @@ export default function Hero() {
               gap-4
             "
           >
-
             {/* Number */}
-
             <span
               className="
                 font-oswald
@@ -464,14 +421,10 @@ export default function Hero() {
               01
             </span>
 
-
             {/* Line */}
-
             <span className="h-px w-10 bg-white/30" />
 
-
             {/* PRINT */}
-
             <span
               className="
                 font-montserrat
@@ -485,16 +438,12 @@ export default function Hero() {
               Print
             </span>
 
-
             {/* Arrow */}
-
             <span className="text-[var(--hill-yellow)]">
               →
             </span>
 
-
             {/* BRAND */}
-
             <span
               className="
                 font-montserrat
@@ -508,16 +457,12 @@ export default function Hero() {
               Brand
             </span>
 
-
             {/* Arrow */}
-
             <span className="text-[var(--hill-yellow)]">
               →
             </span>
 
-
             {/* DIGITAL */}
-
             <span
               className="
                 font-montserrat
@@ -530,18 +475,13 @@ export default function Hero() {
             >
               Digital
             </span>
-
           </motion.div>
-
         </div>
-
       </div>
-
 
       {/* =========================================
           BOTTOM BRAND LINE
       ========================================== */}
-
       <div
         className="
           absolute
@@ -556,7 +496,6 @@ export default function Hero() {
           to-transparent
         "
       />
-
     </section>
   );
 }

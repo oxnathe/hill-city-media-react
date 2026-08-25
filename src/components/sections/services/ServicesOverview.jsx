@@ -15,7 +15,7 @@ const services = [
     description:
       "Professional video production that captures your story, showcases your brand, and keeps your audience watching.",
     icon: Camera,
-    href: "/videography",
+    href: "/services/videography",
     label: "Explore Videography",
   },
   {
@@ -24,7 +24,7 @@ const services = [
     description:
       "Strategic digital campaigns designed to increase your visibility, connect with your audience, and grow your business.",
     icon: Megaphone,
-    href: "/digital-marketing",
+    href: "/services/digital-marketing",
     label: "Explore Marketing",
   },
   {
@@ -33,7 +33,7 @@ const services = [
     description:
       "Distinctive branding and corporate identity systems that give your business a professional and memorable presence.",
     icon: Palette,
-    href: "/corporate-identity",
+    href: "/services/corporate-identity",
     label: "Explore Branding",
   },
   {
@@ -42,7 +42,7 @@ const services = [
     description:
       "High-quality printing solutions that bring your designs to life, from everyday business materials to large-format branding.",
     icon: Printer,
-    href: "/printing-services",
+    href: "/services/printing",
     label: "Explore Printing",
   },
 ];
@@ -72,7 +72,9 @@ export default function ServicesOverview() {
 
             <h2 className="font-oswald text-5xl font-bold uppercase leading-none sm:text-6xl lg:text-7xl">
               Everything Your
-              <span className="block text-[var(--hill-red)]">Brand Needs.</span>
+              <span className="block text-[var(--hill-red)]">
+                Brand Needs.
+              </span>
             </h2>
           </motion.div>
 
