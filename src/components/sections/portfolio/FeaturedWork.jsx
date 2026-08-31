@@ -12,7 +12,8 @@ const featuredProjects = [
     category: "Commercial Printing",
     description:
       "High-impact printed materials created to bring a campaign from concept to physical experience.",
-    image: null,
+    image:
+      "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&q=80&w=1600",
     size: "large",
   },
   {
@@ -21,7 +22,8 @@ const featuredProjects = [
     category: "Corporate Identity",
     description:
       "A complete visual identity designed to give a growing brand a stronger, more confident presence.",
-    image: null,
+    image:
+      "https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&q=80&w=1200",
     size: "small",
   },
   {
@@ -30,7 +32,8 @@ const featuredProjects = [
     category: "Digital Marketing",
     description:
       "Creative digital content built to capture attention and keep a brand consistently visible.",
-    image: null,
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
     size: "small",
   },
 ];
@@ -175,7 +178,7 @@ export default function FeaturedWork() {
                         className="text-[#ffd400]"
                       />
 
-                      <span className="font-['Poppins'] text-[10px] font-semibold uppercase tracking-[0.2em] text-white/60">
+                      <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-white/60">
                         {project.category}
                       </span>
                     </div>

@@ -1,7 +1,5 @@
 import { useState } from "react";
-
 import { motion, AnimatePresence } from "motion/react";
-
 import {
   ArrowUpRight,
   Image as ImageIcon,
@@ -24,7 +22,8 @@ const projects = [
     category: "Branding",
     description:
       "A bold visual direction created to give a brand a stronger and more recognizable identity.",
-    image: null,
+    image:
+      "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=1200",
   },
   {
     id: 2,
@@ -32,7 +31,8 @@ const projects = [
     category: "Printing",
     description:
       "Professional printed materials designed to keep a brand consistent across physical touchpoints.",
-    image: null,
+    image:
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1200",
   },
   {
     id: 3,
@@ -40,7 +40,8 @@ const projects = [
     category: "Digital",
     description:
       "Creative digital content designed to attract attention and keep a brand active online.",
-    image: null,
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
   },
   {
     id: 4,
@@ -48,7 +49,8 @@ const projects = [
     category: "Videography",
     description:
       "Visual storytelling and media content created to communicate a brand with energy and clarity.",
-    image: null,
+    image:
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=1200",
   },
   {
     id: 5,
@@ -56,7 +58,8 @@ const projects = [
     category: "Corporate",
     description:
       "A polished corporate identity system designed around professionalism, clarity and consistency.",
-    image: null,
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
   },
   {
     id: 6,
@@ -64,7 +67,8 @@ const projects = [
     category: "Branding",
     description:
       "Campaign-focused creative direction combining strong typography, composition and brand personality.",
-    image: null,
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
   },
 ];
 

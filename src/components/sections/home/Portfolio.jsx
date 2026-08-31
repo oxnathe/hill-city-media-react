@@ -8,16 +8,18 @@ const projects = [
     title: "Corporate Print",
     description:
       "Professional print materials designed to make every physical brand touchpoint count.",
-    image: "/portfolio/print.jpg",
+    image: "/portfolio/print.jpeg",
   },
+
   {
     number: "02",
     category: "BRAND",
     title: "Brand Identity",
     description:
       "Bold visual identities created to give businesses a stronger and more memorable presence.",
-    image: "/portfolio/brand.jpg",
+    image: "/portfolio/brand.png",
   },
+
   {
     number: "03",
     category: "DIGITAL",
@@ -26,6 +28,7 @@ const projects = [
       "Creative digital content designed to capture attention and move brands forward.",
     image: "/portfolio/digital.jpg",
   },
+
   {
     number: "04",
     category: "MEDIA",
@@ -52,9 +55,7 @@ function ProjectCard({ project, index }) {
       {/* PROJECT IMAGE */}
       <div
         className={`relative overflow-hidden rounded-[28px] bg-black ${
-          index === 0
-            ? "aspect-[16/9] md:aspect-[2/1]"
-            : "aspect-[4/3]"
+          index === 0 ? "aspect-[16/9] md:aspect-[2/1]" : "aspect-[4/3]"
         }`}
       >
         <motion.img
@@ -123,10 +124,8 @@ export default function Portfolio() {
   return (
     <section className="relative overflow-hidden bg-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-
         {/* SECTION HEADER */}
         <div className="grid gap-10 md:grid-cols-[1fr_0.8fr] md:items-end">
-
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 35 }}
@@ -146,9 +145,7 @@ export default function Portfolio() {
               Work That
               <br />
 
-              <span className="text-black/15">
-                Speaks.
-              </span>
+              <span className="text-black/15">Speaks.</span>
             </h2>
           </motion.div>
 
@@ -205,9 +202,7 @@ export default function Portfolio() {
             <span className="absolute inset-0 origin-left scale-x-0 bg-[var(--hill-red)] transition-transform duration-300 group-hover:scale-x-100" />
 
             {/* TEXT */}
-            <span className="relative z-10">
-              VIEW ALL WORK
-            </span>
+            <span className="relative z-10">VIEW ALL WORK</span>
 
             {/* ARROW */}
             <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black text-white transition-colors duration-300 group-hover:bg-[var(--hill-yellow)] group-hover:text-black">
@@ -222,3 +217,4 @@ export default function Portfolio() {
     </section>
   );
 }
+

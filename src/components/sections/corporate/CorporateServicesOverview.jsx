@@ -20,7 +20,8 @@ const services = [
     description:
       "Distinctive logos designed to give your business a strong visual mark that people can recognize and remember.",
     icon: Palette,
-    image: "/images/services/corporate/logo-design.jpg",
+    image:
+      "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1200",
   },
   {
     number: "02",
@@ -28,7 +29,8 @@ const services = [
     description:
       "A complete visual identity system that brings your logo, colors, typography, and brand personality together.",
     icon: Brush,
-    image: "/images/services/corporate/brand-identity.jpg",
+    image:
+      "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=1200",
   },
   {
     number: "03",
@@ -36,7 +38,8 @@ const services = [
     description:
       "Clear brand guidelines that show your team exactly how to use your identity consistently across every platform.",
     icon: BookOpen,
-    image: "/images/services/corporate/brand-guidelines.jpg",
+    image:
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1200",
   },
   {
     number: "04",
@@ -44,7 +47,8 @@ const services = [
     description:
       "Professional business cards, letterheads, envelopes, invoices, and other materials designed around your identity.",
     icon: FileText,
-    image: "/images/services/corporate/stationery.jpg",
+    image:
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1200",
   },
   {
     number: "05",
@@ -52,7 +56,8 @@ const services = [
     description:
       "Polished company profiles and presentation materials that communicate your business professionally to clients and partners.",
     icon: BadgeCheck,
-    image: "/images/services/corporate/corporate-profile.jpg",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
   },
   {
     number: "06",
@@ -60,7 +65,8 @@ const services = [
     description:
       "Professional assistance with CAC business registration so you can formalize your business and take the next step with confidence.",
     icon: FileText,
-    image: "/images/services/corporate/cac-registration.jpg",
+    image:
+      "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=1200",
   },
   {
     number: "07",
@@ -68,7 +74,8 @@ const services = [
     description:
       "Branded visual materials for marketing, packaging, presentations, events, social media, and everyday business use.",
     icon: Package,
-    image: "/images/services/corporate/brand-collateral.jpg",
+    image:
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=1200",
   },
 ];
 
