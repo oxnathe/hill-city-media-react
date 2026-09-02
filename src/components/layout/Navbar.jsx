@@ -36,13 +36,11 @@ export default function Navbar() {
 
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] =
-    useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   /* =====================================================
      SCROLL TO TOP
-     ===================================================== */
-
+  ===================================================== */
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -65,14 +63,12 @@ export default function Navbar() {
       {/* =====================================================
           NAVBAR
       ===================================================== */}
-
       <header className="fixed left-0 right-0 top-0 z-[100] px-4 pt-4">
         <nav className="relative mx-auto flex h-[72px] max-w-7xl items-center justify-between overflow-visible rounded-full border border-black/10 bg-white px-5 shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
 
           {/* =================================================
               LOGO
           ================================================= */}
-
           <Link
             to="/"
             onClick={() => {
@@ -93,13 +89,9 @@ export default function Navbar() {
           {/* =================================================
               DESKTOP NAVIGATION
           ================================================= */}
-
           <div className="hidden items-center gap-1 lg:flex">
 
-            {/* =================================================
-                HOME
-            ================================================= */}
-
+            {/* HOME */}
             <NavLink
               to="/"
               end
@@ -129,10 +121,7 @@ export default function Navbar() {
               )}
             </NavLink>
 
-            {/* =================================================
-                ABOUT
-            ================================================= */}
-
+            {/* ABOUT */}
             <NavLink
               to="/about"
               onClick={scrollToTop}
@@ -162,9 +151,8 @@ export default function Navbar() {
             </NavLink>
 
             {/* =================================================
-                SERVICES
+                DESKTOP SERVICES
             ================================================= */}
-
             <div
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
@@ -176,8 +164,7 @@ export default function Navbar() {
                 className="group relative flex items-center gap-1 rounded-full px-4 py-3 font-montserrat text-sm font-semibold"
               >
                 {({ isActive }) => {
-                  const active =
-                    isActive || servicesPageActive;
+                  const active = isActive || servicesPageActive;
 
                   return (
                     <>
@@ -194,9 +181,7 @@ export default function Navbar() {
                       <ChevronDown
                         size={14}
                         className={`transition-transform duration-300 ${
-                          servicesOpen
-                            ? "rotate-180"
-                            : ""
+                          servicesOpen ? "rotate-180" : ""
                         }`}
                       />
 
@@ -213,9 +198,8 @@ export default function Navbar() {
               </NavLink>
 
               {/* =================================================
-                  SERVICES DROPDOWN
+                  DESKTOP SERVICES DROPDOWN
               ================================================= */}
-
               <AnimatePresence>
                 {servicesOpen && (
                   <motion.div
@@ -245,8 +229,7 @@ export default function Navbar() {
                       </p>
 
                       <p className="mt-1 font-poppins text-xs text-black/45">
-                        Creative solutions for ambitious
-                        brands.
+                        Creative solutions for ambitious brands.
                       </p>
                     </div>
 
@@ -299,10 +282,7 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* =================================================
-                PORTFOLIO
-            ================================================= */}
-
+            {/* PORTFOLIO */}
             <NavLink
               to="/portfolio"
               onClick={scrollToTop}
@@ -331,10 +311,7 @@ export default function Navbar() {
               )}
             </NavLink>
 
-            {/* =================================================
-                CONTACT
-            ================================================= */}
-
+            {/* CONTACT */}
             <NavLink
               to="/contact"
               onClick={scrollToTop}
@@ -366,22 +343,16 @@ export default function Navbar() {
 
           {/* =================================================
               START A PROJECT
-              RED + YELLOW ALWAYS MOVING
           ================================================= */}
-
           <Link
             to="/contact"
             onClick={scrollToTop}
             className="group relative hidden overflow-hidden rounded-full bg-[#080808] px-6 py-3.5 font-montserrat text-xs font-bold text-white lg:flex"
           >
-            {/* Moving red/yellow background */}
             <motion.span
               className="absolute inset-0 bg-[linear-gradient(110deg,#e50914_0%,#e50914_35%,#ffd400_50%,#e50914_65%,#e50914_100%)] bg-[length:250%_100%]"
               animate={{
-                backgroundPosition: [
-                  "100% 0%",
-                  "0% 0%",
-                ],
+                backgroundPosition: ["100% 0%", "0% 0%"],
               }}
               transition={{
                 duration: 3,
@@ -390,14 +361,10 @@ export default function Navbar() {
               }}
             />
 
-            {/* Dark idle overlay */}
             <span className="absolute inset-[2px] rounded-full bg-[#080808]/85 transition-all duration-500 group-hover:bg-transparent" />
 
-            {/* Hover glow */}
             <span className="absolute inset-0 rounded-full opacity-0 shadow-[0_0_25px_rgba(229,9,20,0.45)] transition-opacity duration-300 group-hover:opacity-100" />
 
-            {/* Button content */}
-            {/* KEEP TEXT WHITE */}
             <span className="relative z-10 flex items-center gap-2 text-white">
               <span className="text-white transition-colors duration-300">
                 Start a Project
@@ -413,12 +380,9 @@ export default function Navbar() {
           {/* =================================================
               MOBILE MENU BUTTON
           ================================================= */}
-
           <button
             type="button"
-            onClick={() =>
-              setMobileOpen((prev) => !prev)
-            }
+            onClick={() => setMobileOpen((prev) => !prev)}
             className="group relative z-[110] flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-black text-white lg:hidden"
             aria-label={
               mobileOpen
@@ -447,7 +411,6 @@ export default function Navbar() {
       {/* =====================================================
           MOBILE MENU
       ===================================================== */}
-
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -464,11 +427,9 @@ export default function Navbar() {
               {/* =================================================
                   MOBILE NAVIGATION
               ================================================= */}
-
               <div className="flex flex-col">
 
                 {/* HOME */}
-
                 <NavLink
                   to="/"
                   end
@@ -503,7 +464,6 @@ export default function Navbar() {
                 </NavLink>
 
                 {/* ABOUT */}
-
                 <NavLink
                   to="/about"
                   onClick={() => {
@@ -539,41 +499,63 @@ export default function Navbar() {
                 {/* =================================================
                     MOBILE SERVICES
                 ================================================= */}
-
                 <div className="border-b border-white/10">
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setMobileServicesOpen(
-                        (prev) => !prev
-                      )
-                    }
-                    className="flex w-full items-center justify-between py-5 text-left"
-                  >
-                    <span
-                      className={`font-oswald text-4xl font-semibold uppercase ${
-                        servicesPageActive
-                          ? "text-[var(--hill-red)]"
-                          : "text-white"
-                      }`}
+
+                  {/* SERVICES HEADER */}
+                  <div className="flex items-center justify-between">
+
+                    {/* SERVICES LINK */}
+                    <NavLink
+                      to="/services"
+                      onClick={() => {
+                        closeMobile();
+                        scrollToTop();
+                      }}
+                      className="flex flex-1 items-center py-5 text-left"
                     >
-                      Services
-                    </span>
+                      <span
+                        className={`font-oswald text-4xl font-semibold uppercase ${
+                          servicesPageActive
+                            ? "text-[var(--hill-red)]"
+                            : "text-white"
+                        }`}
+                      >
+                        Services
+                      </span>
+                    </NavLink>
 
-                    <ChevronDown
-                      size={28}
-                      className={`transition-transform duration-300 ${
+                    {/* DROPDOWN BUTTON */}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setMobileServicesOpen(
+                          (prev) => !prev
+                        )
+                      }
+                      className="flex h-16 w-14 items-center justify-center"
+                      aria-label={
                         mobileServicesOpen
-                          ? "rotate-180 text-[var(--hill-yellow)]"
-                          : servicesPageActive
-                          ? "text-[var(--hill-red)]"
-                          : "text-white/50"
-                      }`}
-                    />
-                  </button>
+                          ? "Close services menu"
+                          : "Open services menu"
+                      }
+                      aria-expanded={mobileServicesOpen}
+                    >
+                      <ChevronDown
+                        size={28}
+                        className={`transition-transform duration-300 ${
+                          mobileServicesOpen
+                            ? "rotate-180 text-[var(--hill-yellow)]"
+                            : servicesPageActive
+                            ? "text-[var(--hill-red)]"
+                            : "text-white/50"
+                        }`}
+                      />
+                    </button>
+                  </div>
 
-                  {/* MOBILE SERVICES LIST */}
-
+                  {/* =================================================
+                      MOBILE SERVICES LIST
+                  ================================================= */}
                   <AnimatePresence>
                     {mobileServicesOpen && (
                       <motion.div
@@ -592,6 +574,7 @@ export default function Navbar() {
                         className="overflow-hidden"
                       >
                         <div className="pb-4">
+
                           {services.map((service) => (
                             <NavLink
                               key={service.path}
@@ -623,10 +606,20 @@ export default function Navbar() {
                                   >
                                     {service.name}
                                   </span>
+
+                                  <ArrowUpRight
+                                    size={16}
+                                    className={`ml-auto ${
+                                      isActive
+                                        ? "text-[var(--hill-yellow)]"
+                                        : "text-white/20"
+                                    }`}
+                                  />
                                 </>
                               )}
                             </NavLink>
                           ))}
+
                         </div>
                       </motion.div>
                     )}
@@ -634,7 +627,6 @@ export default function Navbar() {
                 </div>
 
                 {/* PORTFOLIO */}
-
                 <NavLink
                   to="/portfolio"
                   onClick={() => {
@@ -668,7 +660,6 @@ export default function Navbar() {
                 </NavLink>
 
                 {/* CONTACT */}
-
                 <NavLink
                   to="/contact"
                   onClick={() => {
@@ -705,7 +696,6 @@ export default function Navbar() {
               {/* =================================================
                   MOBILE CTA
               ================================================= */}
-
               <motion.a
                 href="https://wa.me/2348031388328"
                 target="_blank"
@@ -723,8 +713,6 @@ export default function Navbar() {
                 }}
                 className="group relative mt-8 flex items-center justify-between overflow-hidden rounded-full bg-[var(--hill-red)] px-6 py-4 font-montserrat text-sm font-bold text-white"
               >
-                {/* Moving brand color */}
-
                 <motion.span
                   className="absolute inset-0 bg-[linear-gradient(110deg,#e50914_0%,#e50914_35%,#ffd400_50%,#e50914_65%,#e50914_100%)] bg-[length:250%_100%]"
                   animate={{
@@ -740,8 +728,6 @@ export default function Navbar() {
                   }}
                 />
 
-                {/* Content */}
-
                 <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
                   Start a Conversation
                 </span>
@@ -752,10 +738,7 @@ export default function Navbar() {
                 />
               </motion.a>
 
-              {/* =================================================
-                  MOBILE FOOTER
-              ================================================= */}
-
+              {/* MOBILE FOOTER */}
               <p className="mt-auto pt-10 font-poppins text-xs text-white/30">
                 Creative. Print. Digital. Media.
               </p>

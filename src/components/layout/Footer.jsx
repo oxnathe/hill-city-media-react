@@ -37,11 +37,13 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--hill-black)] px-5 pb-8 pt-20 text-white md:px-8 lg:px-10">
       <div className="mx-auto max-w-7xl">
+
         {/* =====================================================
             MAIN FOOTER
         ===================================================== */}
 
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr]">
+
           {/* =====================================================
               BRAND
           ===================================================== */}
@@ -120,6 +122,10 @@ export default function Footer() {
               Let&apos;s Talk
             </h3>
 
+            {/* =====================================================
+                WHATSAPP
+            ===================================================== */}
+
             <a
               href={`https://wa.me/${siteConfig.whatsapp}`}
               target="_blank"
@@ -130,6 +136,62 @@ export default function Footer() {
 
               <ArrowUpRight
                 size={18}
+                className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+              />
+            </a>
+
+            {/* =====================================================
+                INSTAGRAM
+            ===================================================== */}
+
+            <a
+              href="https://www.instagram.com/hillcitymediaprint/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Hill City Media on Instagram"
+              className="group mt-5 inline-flex items-center gap-3 font-poppins text-sm text-white/70 transition-colors duration-300 hover:text-[var(--hill-yellow)]"
+            >
+              {/* Instagram Icon */}
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--hill-red)] text-white transition-all duration-300 group-hover:bg-[var(--hill-yellow)] group-hover:text-black">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="19"
+                  height="19"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                  />
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                  />
+
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </span>
+
+              <span>Hillcitymediaprint</span>
+
+              <ArrowUpRight
+                size={14}
                 className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
               />
             </a>

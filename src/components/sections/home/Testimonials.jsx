@@ -6,22 +6,22 @@ const testimonials = [
   {
     quote:
       "Hill City understood exactly what we wanted and turned our ideas into visuals that actually represented our brand.",
-    name: "Client Name",
+    name: "Aloe Beauty",
     role: "Business Owner",
     service: "Brand Identity",
   },
   {
     quote:
       "From the design to the final production, everything felt professional. The team paid attention to the details that mattered.",
-    name: "Client Name",
-    role: "Company Director",
+    name: "Sluah Hairs",
+    role: "Founder",
     service: "Print & Design",
   },
   {
     quote:
       "Working with Hill City made our brand look more professional and gave us the confidence to show up better in our market.",
-    name: "Client Name",
-    role: "Founder",
+    name: "Caio Pizza",
+    role: "Manager",
     service: "Digital & Media",
   },
 ];

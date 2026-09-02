@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hill-city-media.vercel.app/sitemap.xml
+Sitemap: https://hillcitymedia.com/sitemap.xml

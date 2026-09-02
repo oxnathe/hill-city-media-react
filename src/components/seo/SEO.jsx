@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://hill-city-media.vercel.app";
+const SITE_URL = "https://hillcitymedia.com";
 const SITE_NAME = "Hill City Media";
 
 export default function SEO({

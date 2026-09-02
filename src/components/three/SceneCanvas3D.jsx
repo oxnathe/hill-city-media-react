@@ -10,10 +10,11 @@ export default function SceneCanvas3D() {
           position: [0, 0, 8],
           fov: 42,
         }}
-        dpr={[1, 1.5]}
+        dpr={[1, 1.25]}
         gl={{
           antialias: true,
           alpha: true,
+          powerPreference: "high-performance",
         }}
       >
         <Suspense fallback={null}>
